@@ -14,29 +14,10 @@ import { ShopifyProxyMiddleware } from './shopify/middleware/proxy.middleware';
 import { join } from 'path';
 import { ShopifyAdminMiddleware } from './shopify/middleware/admin.middleware';
 import { SentryModule, SentryInterceptor } from '@ntegral/nestjs-sentry';
-import { LogLevel } from '@sentry/types';
 import { AdminController } from './controllers/admin.controller';
 
 @Module({
   imports: [
-    SentryModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        dsn: configService.get<string>('sentryDsn'),
-        debug:
-          configService.get<string>('environment') == 'dev' ||
-          configService.get<string>('environment') == 'staging',
-        environment: configService.get<string>('environment'),
-        release: null,
-        logLevel:
-          configService.get<string>('environment') == 'dev'
-            ? LogLevel.Debug
-            : configService.get<string>('environment') == 'staging'
-            ? LogLevel.Debug
-            : LogLevel.Verbose,
-      }),
-      inject: [ConfigService],
-    }),
     ShopifyModule,
     ConfigModule.forRoot({ load: [configuration], isGlobal: true }),
     MongooseModule.forRootAsync({

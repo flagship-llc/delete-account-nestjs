@@ -1,7 +1,7 @@
 export default () => ({
   shopifyApiKey: process.env.SHOPIFY_API_KEY,
   shopifySecretKey: process.env.SHOPIFY_SECRET_KEY,
-  shopifyApiVersion: process.env.SHOPIFY_API_VERSION || '2021-10',
+  shopifyApiVersion: process.env.SHOPIFY_API_VERSION || '2022-07',
   appDomain: process.env.APP_DOMAIN,
   dbUri: process.env.DB_URI,
   port: process.env.PORT || 5000,

@@ -1,6 +1,5 @@
 require('dotenv').config();
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 let mode = 'production';
@@ -75,34 +74,6 @@ module.exports = [
     },
     resolve: {
       extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
-    },
-  },
-  {
-    mode,
-    entry: {
-      index: path.resolve(__dirname, 'client', 'theme', 'index.js'),
-    },
-    output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist', 'client', 'theme'),
-    },
-    module: {
-      rules: [vueLoader, babelLoader, vueSassLoader],
-    },
-    plugins: [
-      new VueLoaderPlugin(),
-      new CopyPlugin({
-        patterns: [
-          {
-            from: path.resolve(__dirname, 'client', 'theme', 'views'),
-            to: path.resolve(__dirname, 'dist', 'client', 'theme', 'views'),
-          },
-        ],
-      }),
-    ],
-    devtool,
-    resolve: {
-      extensions: ['*', '.js', '.vue'],
     },
   },
 ];

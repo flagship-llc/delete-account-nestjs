@@ -11,7 +11,13 @@ const Dashboard = () => {
 
   return (
     <Page>
-      <Card></Card>
+      <Card>
+        <Card.Section>
+          <p>
+            This is the admin dashboard.
+          </p>
+        </Card.Section>
+      </Card>
     </Page>
   );
 };

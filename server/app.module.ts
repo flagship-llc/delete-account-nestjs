@@ -34,10 +34,6 @@ import { AdminController } from './controllers/admin.controller';
         rootPath: join(__dirname, '..', 'client', 'admin'),
         renderPath: '/',
       },
-      {
-        rootPath: join(__dirname, '..', 'client', 'theme'),
-        renderPath: '/proxy',
-      },
     ),
   ],
   controllers: [

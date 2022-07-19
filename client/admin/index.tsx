@@ -6,7 +6,7 @@ import jaTranslations from '@shopify/polaris/locales/ja.json';
 import { AppProvider, Frame } from '@shopify/polaris';
 import { Provider } from '@shopify/app-bridge-react';
 import '@shopify/polaris/dist/styles.css';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/index';
 import AppContextProvider from './contexts/AppContext';
 
 const config = {

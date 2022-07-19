@@ -13,7 +13,6 @@ async function bootstrap() {
 
   app.setBaseViewsDir([
     join(__dirname, '..', 'client', 'admin', 'views'),
-    join(__dirname, '..', 'client', 'theme', 'views'),
   ]);
 
   app.setViewEngine('hbs');
